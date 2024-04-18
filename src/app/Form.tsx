@@ -66,12 +66,20 @@ export default function Form() {
         formState: {errors},
     } = useForm<FormData>()
     const onSubmit: SubmitHandler<FormData> = (data) => {
-
         const user = {...data, ...location.coordinates}
         console.log(user)
         reset()
-
+        setLocation({
+            loaded: false,
+            coordinates: {lat: "", lng: ""}
+        })
+        alert(JSON.stringify(user))
     }
+
+    const SEND_GEO = !location.loaded && location.coordinates?.lat === ''
+    const ERROR_GEO = location.loaded && location.error
+    const SUCCESS_GEO = location.loaded && location.coordinates?.lat !== '' && !location.error
+
     return <div className={'mt-4 w-full'}>
         <form onSubmit={handleSubmit(onSubmit)}
               className={'max-w-[400px] w-full bg-white/70 m-auto px-2 py-4 flex justify-start flex-col items-center rounded-md'}>
@@ -95,18 +103,30 @@ export default function Form() {
                 )}
             />
             {errors.phone &&
-                <p className={'text-white text-md font-bold bg-red-500 mt-2 p-1 rounded-md flex items-center shadow-md'}>
+                <p className={'text-white max-w-[210px] text-[11px]  font-bold bg-red-500 mt-2 px-2 py-1 rounded-md flex items-center shadow-md'}>
                     <span className={'text-3xl mr-2'}>☝️</span>Проверьте номер телефона</p>
             }
 
 
             <div
-                className={clsx('mt-3 max-w-[210px] w-full text-[13px] flex items-center p-1 rounded-md cursor-pointer font-bold', location.loaded ? 'bg-green-600' : 'bg-orange-400')}
-                onClick={checkGeoPosition}><span className={'text-3xl mr-2'}>{!location.loaded ? '🗺️' : '👍'}</span>
-                {!location.loaded ? 'Отправить координаты' : 'Координаты получены'}
+                className={clsx('mt-3 max-w-[210px] w-full text-[13px] flex items-center p-1 rounded-md cursor-pointer font-bold', ERROR_GEO && 'bg-red-400', location.loaded && location.coordinates ? 'bg-green-600' : 'bg-orange-400')}
+                onClick={checkGeoPosition}><span
+                className={'text-3xl mr-2'}>
+                {SEND_GEO && '🗺️'}
+                {ERROR_GEO && '😔'}
+                {SUCCESS_GEO && '👍'}
+            </span>
+                {ERROR_GEO && 'Не удалось определить'}
+                {SEND_GEO && 'Отправить координаты'}
+                {SUCCESS_GEO && 'Координаты получены'}
             </div>
             <span
-                className={'text-black/40 underline text-[11px]'}>{!location.loaded ? 'необязательно' : 'незабудьте отправить форму '}</span>
+                className={'text-black/40 underline text-[11px]'}>
+                {SEND_GEO && 'необязательно'}
+                {ERROR_GEO && 'отправьте только номер телефона'}
+                {SUCCESS_GEO && 'незабудьте отправить форму'}
+
+            </span>
             <div className={'mt-10'}>
                 <button className={'w-[210px] bg-green-600 p-3 rounded-md shadow-lg font-bold'}
                         type={'submit'}>Отправить
