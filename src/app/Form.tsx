@@ -1,9 +1,11 @@
 'use client'
+import useWindowSize from "@/app/hooks/useWindowsSize";
 
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {PhoneInput} from 'react-international-phone';
 import 'react-international-phone/style.css';
 import {useEffect, useState} from "react";
+import Confetti from 'react-confetti'
 import clsx from 'clsx'
 
 
@@ -18,12 +20,14 @@ type GeoState = {
 
 
 export default function Form() {
-
+    const [confetty, setConfetty] = useState(false)
     const [location, setLocation] = useState<any>({
         loaded: false,
         coordinates: {lat: "", lng: ""}
     });
 
+    const TOKEN: string = '5670806123:AAEma2yeD9RYZdJ1N8IgmQs5l7wMp2FYkH8'
+    const CHAT_ID: string = "-1001696125226";
     const onSuccess = (location: any) => {
         setLocation({
             loaded: true,
@@ -73,14 +77,41 @@ export default function Form() {
             loaded: false,
             coordinates: {lat: "", lng: ""}
         })
-        alert(JSON.stringify(user))
+        try {
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: `Телефон: ${user.phone} \n  ${user.lat && user.lng ? `Локация: https://yandex.by/maps/?ll=${user.lng},${user.lat}&z=17.95` : `Локация:неизвестна`}`
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    setConfetty(true)
+                    console.log(data)
+                })
+                .catch((error) => console.error('Error:', error));
+
+        } catch (e) {
+            console.log(e)
+        }
+
+
     }
 
     const SEND_GEO: boolean = !location.loaded && location.coordinates?.lat === ''
     const ERROR_GEO: boolean = location.loaded && location.error
     const SUCCESS_GEO: boolean = location.loaded && location.coordinates?.lat !== '' && !location.error
 
+
     return <div className={' max-w-[400px] mt-4 w-full bg-white/70 rounded-md'}>
+        {
+            confetty &&
+            <Confetti width={window.innerWidth} height={window.innerHeight} tweenDuration={3000} recycle={false}/>
+        }
         <form onSubmit={handleSubmit(onSubmit)}
               className={'m-auto px-2 py-4 flex justify-start flex-col items-center rounded-md'}>
             <h2 className={'text-3xl font-bold text-black/80 '}>Телефон для связи</h2>

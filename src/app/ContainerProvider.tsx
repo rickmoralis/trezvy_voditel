@@ -1,4 +1,4 @@
-'use client'
+'use api'
 import {PropsWithChildren, ReactNode} from "react";
 import {useTransform, useMotionValue, useScroll} from "framer-motion";
 import StickyMenu from "@/app/Navbar";
