@@ -76,13 +76,13 @@ export default function Form() {
         alert(JSON.stringify(user))
     }
 
-    const SEND_GEO = !location.loaded && location.coordinates?.lat === ''
-    const ERROR_GEO = location.loaded && location.error
-    const SUCCESS_GEO = location.loaded && location.coordinates?.lat !== '' && !location.error
+    const SEND_GEO: boolean = !location.loaded && location.coordinates?.lat === ''
+    const ERROR_GEO: boolean = location.loaded && location.error
+    const SUCCESS_GEO: boolean = location.loaded && location.coordinates?.lat !== '' && !location.error
 
-    return <div className={'mt-4 w-full'}>
+    return <div className={' max-w-[400px] mt-4 w-full bg-white/70 rounded-md'}>
         <form onSubmit={handleSubmit(onSubmit)}
-              className={'max-w-[400px] w-full bg-white/70 m-auto px-2 py-4 flex justify-start flex-col items-center rounded-md'}>
+              className={'m-auto px-2 py-4 flex justify-start flex-col items-center rounded-md'}>
             <h2 className={'text-3xl font-bold text-black/80 '}>Телефон для связи</h2>
             <Controller
                 control={control}
@@ -90,7 +90,6 @@ export default function Form() {
                 rules={{required: true, pattern: /^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$/}}
                 render={({field: {onChange, value}}) => (
                     <PhoneInput
-
                         className={'font-bold mt-5'}
                         inputClassName={'w-full'}
                         hideDropdown
@@ -125,7 +124,6 @@ export default function Form() {
                 {SEND_GEO && 'необязательно'}
                 {ERROR_GEO && 'отправьте только номер телефона'}
                 {SUCCESS_GEO && 'незабудьте отправить форму'}
-
             </span>
             <div className={'mt-10'}>
                 <button className={'w-[210px] bg-green-600 p-3 rounded-md shadow-lg font-bold'}

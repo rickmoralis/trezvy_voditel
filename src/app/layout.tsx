@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import { PT_Sans_Caption} from "next/font/google";
 import "./globals.css";
 import StickyMenu from "@/app/Navbar";
-import {Container} from "postcss";
 import ContainerProvider from "@/app/ContainerProvider";
 
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
@@ -24,7 +23,6 @@ export default function RootLayout({
             <StickyMenu/>
             {children}
         </ContainerProvider>
-
         </body>
         </html>
     );
