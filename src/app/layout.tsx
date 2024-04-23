@@ -1,9 +1,9 @@
 import type {Metadata} from "next";
-import { PT_Sans_Caption} from "next/font/google";
+import {PT_Sans_Caption} from "next/font/google";
 import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google'
 
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
 
@@ -21,6 +21,7 @@ export default function RootLayout({
         <html lang="en">
         <body className={sans_caption.className}>
         <GoogleAnalytics gaId="8008797785"/>
+        <GoogleTagManager gtmId={"G-D9NWJ5P27W"}/>
         <ContainerProvider>
             <StickyMenu/>
             {children}
