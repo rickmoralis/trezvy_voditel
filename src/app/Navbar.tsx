@@ -21,7 +21,7 @@ const StickyMenu = () => {
     })
     return (
         <motion.div
-            className={clsx(`max-w-[1440px] w-full flex sticky top-0 z-50 h-[70px] justify-between items-center text-white bg-black/80 px-4`)}
+            className={clsx(`max-w-[1440px] m-auto w-full flex sticky top-0 z-50 h-[70px] justify-between items-center text-white bg-black/80 px-4`)}
         >
             <div className={'w-[170px] h-[50px]'}>
                 <Image className={'w-full'}
@@ -40,7 +40,7 @@ const StickyMenu = () => {
                 </Link>
             </ul>
             <Link href="tel:+375333854577"
-                className={'flex sm:hidden bg-green-500 text-4xl cursor-pointer p-2 rounded-full'}><IoPhonePortraitOutline/></Link>
+                  className={'flex sm:hidden bg-green-500 text-4xl cursor-pointer p-2 rounded-full'}><IoPhonePortraitOutline/></Link>
         </motion.div>
     );
 };
