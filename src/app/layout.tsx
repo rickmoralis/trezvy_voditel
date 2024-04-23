@@ -3,6 +3,7 @@ import { PT_Sans_Caption} from "next/font/google";
 import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={sans_caption.className}>
+        <GoogleAnalytics gaId="8008797785"/>
         <ContainerProvider>
             <StickyMenu/>
             {children}

@@ -25,7 +25,7 @@ export default function Home() {
             <div className={'max-w-[1440px] m-auto bg-gray-100 px-2'}>
                 <div><h2 className={'text-5xl font-bold text-center pt-5'}>Услуги</h2></div>
                 <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
-                    <div className={'bg-red-100 min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
+                    <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
                         <Image src={img}
                                alt={'driver'}
                         />
@@ -38,9 +38,9 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
-                    <div className={'bg-red-100 min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
+                    <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
                         <Image src={img2}
-                               alt={'driver'}
+                               alt={'driver_stetam'}
                         />
                     </div>
                     <div className={'min-w-[150px] w-full sm:w-1/2'}>
@@ -51,8 +51,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={'max-w-[1440px] m-auto bg-gray-100'}>
-                <div><h2 className={'text-3xl font-bold text-center pt-5'}>Преимущества</h2></div>
+            <div className={'max-w-[1440px] m-auto bg-gray-100 py-40'}>
+                <div><h2 className={'text-3xl font-bold text-center '}>Преимущества</h2></div>
                 <div className={'flex w-full flex-col mt-5 p-2 gap-2 sm:flex-row sm:flex-wrap'}>
                     <div className={'bg-gray-200 p-2 rounded-md sm:w-[32.3%]'}>
                         <svg width="0" height="0">
@@ -100,9 +100,11 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={'max-w-[1440px] m-auto bg-black/80 pt-5'}>
+            <div className={'max-w-[1440px] m-auto bg-black/80 py-20'}>
                 <h2 className={'text-center font-bold text-4xl text-white'}>Заказать звонок</h2>
-                <Form/>
+                <div className={'flex justify-center items-center w-full'}>
+                    <Form/>
+                </div>
             </div>
         </main>
     );
