@@ -6,6 +6,7 @@ import ContainerProvider from "@/app/ContainerProvider";
 import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google'
 import Script from "next/script";
 
+
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
 
 export const metadata: Metadata = {
@@ -37,6 +38,11 @@ export default function RootLayout({
         webvisor:true
       });`}
         </Script>
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/97120978" style={{position:"absolute",left:"-9999px"}} alt="ya_metrika"/>
+            </div>
+        </noscript>
         <ContainerProvider>
             <StickyMenu/>
             {children}
