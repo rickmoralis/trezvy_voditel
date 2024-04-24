@@ -4,7 +4,7 @@ import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
 import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google'
-import YaMetrika from "@/app/metrika/YaMetrika";
+import Script from "next/script";
 
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
 
@@ -23,7 +23,20 @@ export default function RootLayout({
         <body className={sans_caption.className}>
         <GoogleAnalytics gaId="8008797785"/>
         <GoogleTagManager gtmId={"G-D9NWJ5P27W"}/>
-        <YaMetrika/>
+        <Script id="yandex-metrika" strategy="afterInteractive">
+            {`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; 
+        m[i].l=1*new Date(); 
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      
+      ym(97120978, "init", {
+        defer: true,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });`}
+        </Script>
         <ContainerProvider>
             <StickyMenu/>
             {children}
