@@ -29,7 +29,7 @@ const StickyMenu = () => {
                        alt=""/>
             </div>
             <ul className={`gap-3 justify-center items-center hidden sm:flex`}>
-                <Link href={'/'}>
+                <Link href={'#price'}>
                     <li>Цены</li>
                 </Link>
                 <Link href={'/'}>
