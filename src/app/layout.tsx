@@ -24,6 +24,19 @@ export default function RootLayout({
         <body className={sans_caption.className}>
         <GoogleAnalytics gaId="8008797785"/>
         <GoogleTagManager gtmId={"G-D9NWJ5P27W"}/>
+        <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=UA-160659085-1"
+        />
+        <Script strategy="afterInteractive">
+            {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-160659085-1');
+    `}
+        </Script>
         <Script id="yandex-metrika" strategy="afterInteractive">
             {`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; 
         m[i].l=1*new Date(); 
