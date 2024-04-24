@@ -40,6 +40,7 @@ export default function Home() {
                 <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
                     <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
                         <Image src={img2}
+                               className={'max-w-[568px] w-full'}
                                alt={'driver_stetam'}
                         />
                     </div>
@@ -51,7 +52,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={'max-w-[1440px] m-auto bg-gray-100 py-40'}>
+            <div className={'max-w-[1440px] m-auto bg-gray-100 py-5'}>
                 <div><h2 className={'text-3xl font-bold text-center '}>Преимущества</h2></div>
                 <div className={'flex w-full flex-col mt-5 p-2 gap-2 sm:flex-row sm:flex-wrap'}>
                     <div className={'bg-gray-200 p-2 rounded-md sm:w-[32.3%]'}>

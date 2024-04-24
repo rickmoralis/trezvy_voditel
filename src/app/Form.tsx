@@ -85,7 +85,7 @@ export default function Form() {
                 },
                 body: JSON.stringify({
                     chat_id: CHAT_ID,
-                    text: `Телефон: ${user.phone} \n  ${user.lat && user.lng ? `Локация: https://yandex.by/maps/?ll=${user.lng},${user.lat}&z=17.95` : `Локация:неизвестна`}`
+                    text: `Телефон: ${user.phone}\n${user.lat && user.lng ? `Локация: \n${user.lng} ${user.lat}` : `Локация:неизвестна`}`
                 }),
             })
                 .then(response => response.json())

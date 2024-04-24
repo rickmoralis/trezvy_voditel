@@ -39,8 +39,8 @@ const StickyMenu = () => {
                     <li>Контакты</li>
                 </Link>
             </ul>
-            <Link href="tel:+375333854577"
-                  className={'flex sm:hidden bg-green-500 text-4xl cursor-pointer p-2 rounded-full'}><IoPhonePortraitOutline/></Link>
+            <a href="tel:+375333854577"
+                  className={'flex sm:hidden bg-green-500 text-4xl cursor-pointer p-2 rounded-full'}><IoPhonePortraitOutline/></a>
         </motion.div>
     );
 };
