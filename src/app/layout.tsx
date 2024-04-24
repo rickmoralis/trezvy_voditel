@@ -4,6 +4,7 @@ import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
 import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google'
+import YaMetrika from "@/app/metrika/YaMetrika";
 
 const sans_caption = PT_Sans_Caption({subsets: ['cyrillic', 'latin'], weight: ['400', '700']})
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <body className={sans_caption.className}>
         <GoogleAnalytics gaId="8008797785"/>
         <GoogleTagManager gtmId={"G-D9NWJ5P27W"}/>
+        <YaMetrika/>
         <ContainerProvider>
             <StickyMenu/>
             {children}
