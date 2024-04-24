@@ -13,7 +13,7 @@
     background-size: cover;
     z-index: 0;
     position: relative;
-    background: url("https://trezvy-voditel-v-minske.by/images/tild6638-6462-4338-a666-666232396166__whykei51455.jpg");
+    background: url("https://trezvy-voditel.vercel.app/tild6638-6462-4338-a666-666232396166__whykei51455-min.jpeg");
     @apply max-w-[1440px] m-auto
 }
 
