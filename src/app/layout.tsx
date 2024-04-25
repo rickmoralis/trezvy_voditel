@@ -53,9 +53,16 @@ export default function RootLayout({
         </Script>
         <noscript>
             <div>
-                <img src="https://mc.yandex.ru/watch/97120978" style={{position:"absolute",left:"-9999px"}} alt="ya_metrika"/>
+                <img src="https://mc.yandex.ru/watch/97120978" style={{position: "absolute", left: "-9999px"}}
+                     alt="ya_metrika"/>
             </div>
         </noscript>
+        <Script>
+            {`var dataTrafficGuard = dataTrafficGuard || [];
+            dataTrafficGuard.push(['property', 'tg-013364-001']);
+            dataTrafficGuard.push(['event','pageview']);
+            (function() {var tg = document.createElement('script'); tg.type = 'text/javascript'; tg.async = true; tg.src = '//tgtag.io/tg.js?pid=tg-013364-001';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(tg, s);})();`}
+        </Script>
         <ContainerProvider>
             <StickyMenu/>
             {children}
