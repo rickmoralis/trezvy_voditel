@@ -63,6 +63,8 @@ export default function RootLayout({
             dataTrafficGuard.push(['event','pageview']);
             (function() {var tg = document.createElement('script'); tg.type = 'text/javascript'; tg.async = true; tg.src = '//tgtag.io/tg.js?pid=tg-013364-001';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(tg, s);})();`}
         </Script>
+        <noscript><img src="//p.tgtag.io/event?property_id=tg-013364-001&event_name=pageview&no_script=1" width="1"
+                       height="1" border="0"/></noscript>
         <ContainerProvider>
             <StickyMenu/>
             {children}
