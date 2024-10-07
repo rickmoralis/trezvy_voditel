@@ -3,7 +3,7 @@ import { PT_Sans_Caption } from "next/font/google";
 import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 
 // Подключение шрифта PT Sans Caption
@@ -12,7 +12,7 @@ const sans_caption = PT_Sans_Caption({ subsets: ['cyrillic', 'latin'], weight: [
 // Метаданные страницы
 export const metadata: Metadata = {
     title: "🚗 Трезвый водитель Минск: Безопасное возвращение домой",
-    description: "🌟 Ваш надежный партнер на дороге — Trezv 🚗. С нами вы всегда в безопасности, независимо от времени и места 🌃. Наши опытные водители гарантируют вам спокойствие и уверенность в том, что ваш путь домой будет таким же приятным, как и вечер 🏠.",
+    description: "🌟 Ваш надежный партнер на дороге — Trezvy 🚗. С нами вы всегда в безопасности, независимо от времени и места 🌃. Наши опытные водители гарантируют вам спокойствие и уверенность в том, что ваш путь домой будет таким же приятным, как и вечер 🏠.",
 };
 
 // Главный компонент макета
@@ -24,24 +24,21 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={sans_caption.className}>
-        {/* Google Analytics */}
-        <GoogleAnalytics gaId="8008797785" />
-
-        {/* Google Tag Manager (gtag.js) */}
-        <Script
-            strategy="afterInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=UA-160659085-1"
-        />
-        <Script strategy="afterInteractive">
-            {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', 'UA-160659085-1');
-                    `}
-        </Script>
-
+              <GoogleAnalytics gaId="8008797785" />
+            <GoogleTagManager gtmId={"G-D9NWJ5P27W"} />
+            <Script 
+               id="gtag-js" 
+               strategy="afterInteractive" 
+               src="https://www.googletagmanager.com/gtag/js?id=G-D9NWJ5P27W"
+            />
+            <Script strategy="afterInteractive">
+               {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-29L2XBRQ00');
+               `}
+            </Script>
         {/* Яндекс Метрика */}
         <Script id="yandex-metrika" strategy="afterInteractive">
             {`(function(m,e,t,r,i,k,a){
