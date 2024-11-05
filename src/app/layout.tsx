@@ -83,7 +83,7 @@ export default function RootLayout({
         <ContainerProvider>
             <StickyMenu />
             {children}
-            <div class="bg-black w-full flex flex-col text-white font-bold"><div><a href="/politica">Политика конфиденциальности</a></div><div>УНП 190010170</div></div>
+            <div className="bg-black w-full flex flex-col text-white font-bold"><div><a href="/politica">Политика конфиденциальности</a></div><div>УНП 190010170</div></div>
         </ContainerProvider>
         </body>
         </html>
