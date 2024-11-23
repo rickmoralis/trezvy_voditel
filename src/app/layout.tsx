@@ -3,7 +3,6 @@ import { PT_Sans_Caption } from "next/font/google";
 import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 
 // Подключение шрифта PT Sans Caption
