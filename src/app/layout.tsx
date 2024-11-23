@@ -4,7 +4,7 @@ import "./globals.css";
 import StickyMenu from "@/app/Navbar";
 import ContainerProvider from "@/app/ContainerProvider";
 import Script from "next/script";
-
+import { GoogleAnalytics,GoogleTagManager } from '@next/third-parties/google'
 // Подключение шрифта PT Sans Caption
 const sans_caption = PT_Sans_Caption({ subsets: ['cyrillic', 'latin'], weight: ['400', '700'] });
 
