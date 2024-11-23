@@ -23,12 +23,47 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={sans_caption.className}>
+        
         <ContainerProvider>
             <StickyMenu />
             {children}
             <div className="bg-black w-full flex flex-col items-center text-white font-bold"><div><a href="/politica">Политика конфиденциальности</a></div><div>УНП 190010170</div></div>
         </ContainerProvider>
         </body>
+             <GoogleAnalytics gaId="8008797785" />
+        <GoogleTagManager gtmId={"G-D9NWJ5P27W"} />
+        <Script
+            id="gtag-js"
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-D9NWJ5P27W"
+        />
+        <Script strategy="afterInteractive">
+            {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-D9NWJ5P27W');
+               `}
+        </Script>
+        {/* Яндекс Метрика */}
+        <Script id="yandex-metrika" strategy="afterInteractive">
+            {`(function(m,e,t,r,i,k,a){
+                        m[i]=m[i]||function(){
+                            (m[i].a=m[i].a||[]).push(arguments)
+                        }; 
+                        m[i].l=1*new Date(); 
+                        k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+                        k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+                    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                    
+                    ym(97120978, "init", {
+                        defer: true,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });`}
+        </Script>
         </html>
     );
 }
