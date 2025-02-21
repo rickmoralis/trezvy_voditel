@@ -3,6 +3,9 @@ import Form from "@/app/Form";
 import Image from 'next/image'
 import img from '../assets/tild6530-3133-4631-b461-386232653562__568x390_usluga-trezv.jpeg'
 import img2 from '../assets/tild6264-6238-4662-b631-383332663632__91337ed135a267a61d4f.jpeg'
+import img3 from '../assets/prikurka.jpg'
+import img4 from '../assets/toplivo.webp'
+import img5 from '../assets/buksirovka.jpg'
 import {FaBrain, FaBusinessTime, FaCompass, FaRocket, FaSmileBeam, FaThumbsUp} from "react-icons/fa";
 
 export default function Home() {
@@ -35,7 +38,7 @@ export default function Home() {
                     </div>
                     <div id={'#price'} className={'min-w-[150px] w-full sm:w-1/2'}>
                         <h3 className={'font-bold text-2xl'}>Услуга трезвый водитель в Минске</h3>
-                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>40 р.</span> <br/>
+                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>50 р.</span> <br/>
                             + на такси обратно к машине
                         </div>
                     </div>
@@ -49,11 +52,52 @@ export default function Home() {
                     </div>
                     <div className={'min-w-[150px] w-full sm:w-1/2'}>
                         <h3 className={'font-bold text-2xl'}>Личный водитель на вашем авто в Минске</h3>
-                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>40 р.</span> <br/>
+                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>50 р.</span> <br/>
                             + на такси обратно к машине
                         </div>
                     </div>
                 </div>
+                <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
+                    <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
+                        <Image src={img3}
+                               className={'max-w-[568px] w-full'}
+                               alt={'driver_stetam'}
+                        />
+                    </div>
+                    <div className={'min-w-[150px] w-full sm:w-1/2'}>
+                        <h3 className={'font-bold text-2xl'}>Прикурка авто в Минске</h3>
+                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>40 р.</span>
+                        </div>
+                    </div>
+                </div>
+                <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
+                    <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
+                        <Image src={img4}
+                               className={'max-w-[568px] w-full'}
+                               alt={'driver'}
+                        />
+                    </div>
+                    <div id={'#price'} className={'min-w-[150px] w-full sm:w-1/2'}>
+                        <h3 className={'font-bold text-2xl'}>Доставка топлива в Минске</h3>
+                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>30 р.</span>
+                        </div>
+                    </div>
+                </div>
+                <div className={'w-full flex flex-col justify-center items-start mt-5 sm:flex-row sm:gap-4'}>
+                    <div className={'min-w-[150px] w-full flex justify-end items-center sm:justify-center'}>
+                        <Image src={img5}
+                               className={'max-w-[568px] w-full'}
+                               alt={'driver'}
+                        />
+                    </div>
+                    <div id={'#price'} className={'min-w-[150px] w-full sm:w-1/2'}>
+                        <h3 className={'font-bold text-2xl'}>Буксировка в Минске</h3>
+                        <div>Стоимость от <span className={'font-bold text-[#D9711C] text-xl'}>50 р.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={'text-center mt-10 text-4xl font-bold underline text-[#D9711C]'}>За МКАД 50р + 2р/км.</div>
             </div>
             <div className={'max-w-[1440px] m-auto bg-gray-100 py-5'}>
                 <div><h2 className={'text-3xl font-bold text-center '}>Преимущества</h2></div>
